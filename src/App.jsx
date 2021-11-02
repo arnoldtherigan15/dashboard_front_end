@@ -1,4 +1,4 @@
-import { AreaChart } from './components'
+import { Navbar } from './components'
 import './styles/index.css'
 export default function App() {
     return (
