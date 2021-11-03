@@ -8,11 +8,10 @@ export default function App() {
     })
     const onSubmit = (e, text) => {
         e.preventDefault()
-        console.log("masuk", text);
     }
     return (
         <>
-            <Navbar onSubmit={onSubmit} user={user}/>
+            <Navbar onSubmit={onSubmit} user={user} isNotifExist/>
         </>
     )
 }

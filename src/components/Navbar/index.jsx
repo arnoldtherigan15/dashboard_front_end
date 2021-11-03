@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './index.css'
 
-export default function Navbar({ user, onSubmit }) {
+export default function Navbar({ user, onSubmit, isNotifExists }) {
     const [searchTxt, setSearchTxt] = useState('')
       
     return (
@@ -34,7 +34,7 @@ export default function Navbar({ user, onSubmit }) {
                 </div>
                 <div className="nav-notif">
                     <img src="/icon/bell.svg" width="22" height="22"  />
-                    <div className="notif-dot"></div>
+                    { isNotifExists &&  <div className="notif-dot"></div>}
                 </div>
                 <div className="nav-setting">
                     <img src="/icon/settings.svg" width="22" height="22" />
