@@ -1,10 +1,17 @@
+import { useState } from 'react'
 import { Navbar } from './components'
-import './styles/index.css'
+import './styles/global.css'
 export default function App() {
+    const [user, setUser] = useState({
+        name: 'Rehnart H',
+        address: "Grogol, Jakarta"
+    })
+    const onSubmit = (e, text) => {
+        e.preventDefault()
+    }
     return (
         <>
-            <h1>Welcome to the world</h1>
-            <AreaChart/>
+            <Navbar onSubmit={onSubmit} user={user} isNotifExist/>
         </>
     )
 }
