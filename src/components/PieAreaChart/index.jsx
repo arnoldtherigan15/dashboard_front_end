@@ -2,25 +2,24 @@ import { useEffect, useRef } from 'react'
 import './index.css'
 import * as d3 from 'd3'
 
-export default function PieAreaChart({ data }) {
+export default function PieAreaChart({ data, title, }) {
 	const pieChart = useRef()
-
+    const colorsArr = ['#725E9C','#5C8F94','#EBA45E','#E4EAEB']
 	useEffect(()=>{
 
 		// Get positions for each data object
 		const piedata = d3.pie().value(d => d.value)(data)
 		// Define arcs for graphing 
-		const arc = d3.arc().innerRadius(0).outerRadius(200)
+		const arc = d3.arc().innerRadius(0).outerRadius(128)
 
-		const colors = d3.scaleOrdinal(['#725E9C','#5C8F94','#EBA45E','#E4EAEB'])
+		const colors = d3.scaleOrdinal(colorsArr)
 
 		// Define the size and position of svg
 		const svg = d3.select(pieChart.current)
-						.attr('width', 600)
-						.attr('height', 600)
-						// .style('background-color','yellow')
+						.attr('width', 256)
+						.attr('height', 256)
 						.append('g')
-							.attr('transform','translate(300,300)')
+							.attr('transform','translate(128,128)')
 
 		// Add tooltip
 		const tooldiv = d3.select('#pieChart')
@@ -56,8 +55,30 @@ export default function PieAreaChart({ data }) {
 	},[])
 
 	return (
-		<div id='pieChart'>
-			<svg ref={pieChart}></svg>
-		</div>
+		<div className="chart-container">
+            <div className="chart-title-box">
+                <h2>{title}</h2>
+                <div className="chart-title-expand">
+                    <img src="/icon/expand-dot.svg" width="16" height="16"/>
+                </div>
+            </div>
+            <div id='pieChart'>
+                <svg ref={pieChart}></svg>
+            </div>
+            <div className="chart-desc-box">
+                {
+                    data.map((el,i) => {
+                        return (
+                            <div className="chart-desc-item" key={i}>
+                                <div className="chart-desc-item-color" style={{ "backgroundColor": colorsArr[i] }}></div>
+                                <div className="chart-desc-item-text">
+                                    <span>{el.label}</span>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        </div>
 	)
 }

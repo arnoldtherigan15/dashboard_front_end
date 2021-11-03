@@ -27,15 +27,15 @@ export default function App() {
                 isLoading ? (
                     <h1>Loading .... </h1>
                 ) : (
-                    <>
+                    <main className="main">
                         {
                             orders?.length && (
-                                <PieAreaChart data={groupingConversion(orders)}/>
+                                <PieAreaChart data={groupingConversion(orders)} title="Conversion"/>
                             )
                         }
                         
                         <AreaChart/>
-                    </>
+                    </main>
                 )
             }
 
