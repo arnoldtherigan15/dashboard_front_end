@@ -31,7 +31,6 @@ describe("Navbar component render test", () => {
     })
     
     test("Should handle input onChange correctly", () => {
-        const handleSubmit = jest.fn()
         render(<Navbar onSubmit={handleSubmit} isNotifExists user={user}/>)
         const input = screen.getByRole('searchInput')
         fireEvent.change(input, {target: {value: 'something'}})
@@ -39,7 +38,6 @@ describe("Navbar component render test", () => {
     })
     
     test("Should handle form onSubmit correctly", () => {
-        const handleSubmit = jest.fn()
         render(<Navbar onSubmit={handleSubmit} isNotifExists user={user}/>)
         const form = screen.getByRole('searchForm')
         fireEvent.submit(form)
