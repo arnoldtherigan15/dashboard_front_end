@@ -23,6 +23,13 @@ describe("Navbar component render test", () => {
         expect(container.querySelector(".nav-user-info-main")).toBeInTheDocument()
     })
     
+    test("Should render a div with className nav-user-initial with user name that has been to convert to initial", () => {
+        const { container, getByText } = render(<Navbar onSubmit={handleSubmit} isNotifExists user={user}/>)
+    
+        expect(getByText("RH")).toBeInTheDocument()
+        expect(container.querySelector(".nav-user-initial")).toBeInTheDocument()
+    })
+    
     test("Should handle input onChange correctly", () => {
         const handleSubmit = jest.fn()
         render(<Navbar onSubmit={handleSubmit} isNotifExists user={user}/>)

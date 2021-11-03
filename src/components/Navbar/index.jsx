@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import getInitial from '../../helper/getIntial.js'
 import './index.css'
 
 export default function Navbar({ user, onSubmit, isNotifExists }) {
@@ -12,7 +13,7 @@ export default function Navbar({ user, onSubmit, isNotifExists }) {
                 </div>
                 <div className="nav-user">
                     <div className="nav-user-initial">
-                        <p><span>RH</span></p>
+                        <p><span>{ getInitial(user.name) }</span></p>
                     </div>
                     <div className="nav-user-info">
                         <div className="nav-user-info-main">
