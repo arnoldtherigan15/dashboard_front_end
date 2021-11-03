@@ -1,0 +1,14 @@
+.date-sub-menu {
+    height: 56px;
+    width: 100vw;
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 16px;
+}
+
+.date-sub-menu > p {
+    font-size: 12px;
+    font-weight: 500;
+}
