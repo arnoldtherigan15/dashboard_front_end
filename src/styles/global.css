@@ -12,4 +12,9 @@
 .main {
     display: flex;
     padding: 24px 16px;
+    overflow-x: hidden;
+}
+
+.main > div:not(:last-child) {
+    margin-right: 16px;
 }

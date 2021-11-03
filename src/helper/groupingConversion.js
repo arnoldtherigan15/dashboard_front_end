@@ -11,7 +11,7 @@ export default function groupingConversion(data) {
     for (const key in grouppedData) {
         grouppedArr.push({
             label: key,
-            value: grouppedData[key],
+            value: +grouppedData[key],
         })
     }
     return grouppedArr

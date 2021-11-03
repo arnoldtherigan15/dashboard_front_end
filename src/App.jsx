@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import { Navbar, DateSubMenu, PieAreaChart, AreaChart } from './components'
+import { Navbar, DateSubMenu, PieAreaChart, AreaChart, PolarAreaChart } from './components'
 import useFetch from './hooks/useFetch'
 import groupingConversion from './helper/groupingConversion.js'
+import groupingUserCat from './helper/groupingUserCat.js'
 import './styles/global.css'
 export default function App() {
     const [user, setUser] = useState({
@@ -9,6 +10,7 @@ export default function App() {
         address: "Grogol, Jakarta"
     })
     const [ orders, setOrders ] = useState([])
+    const [ userCat, setUserCat ] = useState({})
     const [ data, isLoading ] = useFetch("https://ae1cdb19-2532-46fa-9b8f-cce01702bb1e.mock.pstmn.io/takehometest/web/dashboard")
 
     const onSubmit = (e, text) => {
@@ -17,6 +19,7 @@ export default function App() {
 
     useEffect(() => {
         setOrders(data?.data?.orders)
+        setUserCat(data?.data?.user_category)
     }, [data])
 
     return (
@@ -33,7 +36,11 @@ export default function App() {
                                 <PieAreaChart data={groupingConversion(orders)} title="Conversion"/>
                             )
                         }
-                        
+                        {
+                            Object.keys(userCat).length && (
+                                <PolarAreaChart title="Users" data={groupingUserCat(userCat)}/>
+                            )
+                        }
                         <AreaChart/>
                     </main>
                 )
