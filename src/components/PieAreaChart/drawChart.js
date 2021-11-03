@@ -36,7 +36,7 @@ export default function drawChart(ref,data,colorsArr) {
             .attr('stroke', 'none')
             .on('mouseover', (e,d)=>{
                 tooldiv.style('visibility','visible')
-                        .text(`${d.data.label}:` + `${d.data.value}`)
+                        .text(`$${d.data.value}`)
             })
             .on('mousemove', (e,d)=>{
                 tooldiv.style('top', (e.pageY-50) + 'px')
