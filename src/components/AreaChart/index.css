@@ -13,3 +13,22 @@
     align-items: center;
     width: 50%;
 }
+
+.chart-desc-box-2 {
+    width: 100%;
+    /* background: red; */
+}
+
+.chart-desc-box-2 p {
+    font-size: 12px;
+    color: #9C9C9C;
+}
+.chart-desc-box-2 h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+.chart-desc-box-2 h4 {
+    font-size: 12px;
+    font-weight: 500;
+    color: #5F9F2F;
+}
