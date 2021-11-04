@@ -6,12 +6,23 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.main {
+.chart-section {
     display: flex;
     padding: 24px 16px;
     overflow-x: hidden;
+    /* flex-wrap: wrap; */
 }
 
-.main > div:not(:last-child) {
+.chart-section > div:not(:last-child) {
+    margin-right: 16px;
+}
+
+.table-section {
+    display: flex;
+    padding: 24px 16px;
+    overflow-x: hidden;
+    /* flex-wrap: wrap; */
+}
+.table-section > div:not(:last-child) {
     margin-right: 16px;
 }
