@@ -19,10 +19,7 @@
 
 .table-section {
     display: flex;
-    padding: 24px 16px;
+    /* padding: 24px 16px; */
     overflow-x: hidden;
     /* flex-wrap: wrap; */
-}
-.table-section > div:not(:last-child) {
-    margin-right: 16px;
 }

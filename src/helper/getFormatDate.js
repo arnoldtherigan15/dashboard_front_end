@@ -1,7 +1,5 @@
 export default function getFormatDate (date) {
-    return new Date(date)
-        .toISOString()
-        .replace(/T/, ' ')
+    return date
         .replaceAll('-', '/')
         .replace(/\..+/, '').slice(0, -3)
 }

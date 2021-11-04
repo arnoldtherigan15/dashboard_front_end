@@ -14,8 +14,7 @@ export default function getRevenue(data) {
         let time = new Date(order.start_date).getTime()
         if(grouppedByDate[day.substring(0,3)]) {
             grouppedByDate[day.substring(0,3)].push({
-                total: order.conversion_revenue,
-                time
+                total: order.conversion_revenue
             })
         }
     })
@@ -24,17 +23,15 @@ export default function getRevenue(data) {
             result.push({
                 day: key,
                 total: el.total,
-                time: el.time
             })
         });
         if(!grouppedByDate[key].length) {
             result.push({
                 day: key,
-                total: 0,
-                time: 0
+                total: 0
             })
         }
     }
-    // console.log(result,">>>>> result");
+    
     return result
 }
