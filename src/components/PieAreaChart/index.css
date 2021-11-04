@@ -61,11 +61,11 @@
 
 
 
-#pieChart div {
+/* #pieChart div {
     position: relative;
-}
+} */
 
-#pieChart div:after {
+/* #pieChart div:after {
     content:'';
     position: absolute;
     left: 50%;
@@ -76,4 +76,4 @@
     border-top: solid 8px #fff;
     border-left: solid 8px transparent;
     border-right: solid 8px transparent;
-}
+} */

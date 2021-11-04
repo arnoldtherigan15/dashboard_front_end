@@ -125,7 +125,6 @@ form.search button {
 
 @media (max-width: 850px) {
     .nav-left {
-        /* display: none; */
         margin-bottom: 20px;
     }
     #nav {
@@ -133,7 +132,6 @@ form.search button {
         justify-content: center;
         height: auto;
         align-items: center;
-        /* width: 80%; */
     }
     form.search {
         width: 20em;
