@@ -5,7 +5,7 @@ export default function Badge({status}) {
         "canceled": "#D66D4B",
     }
     return (
-        <div className="badge" style={{ "backgroundColor": statusColor[status] }}>
+        <div className="badge" style={{ "backgroundColor": statusColor[status] }} role="badge">
             {status}
         </div>
     )
