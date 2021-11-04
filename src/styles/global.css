@@ -28,3 +28,52 @@ body {
     overflow-x: hidden;
     /* flex-wrap: wrap; */
 }
+
+
+@media (max-width: 1436px) {
+    .chart-section {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .chart-container {
+        width: 40%;
+    }
+    .chart-container-2 {
+        width: 60%;
+    }
+    .chart-section > div:not(:last-child) {
+        margin-bottom: 16px;
+        margin-right: 0px;
+    }
+
+    .table-section {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .calendar-container {
+        width: 80%;
+    }
+    .table-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1170px) {
+    .chart-container {
+        width: 90%;
+    }
+    .chart-container-2 {
+        width: 90%;
+    }
+    .chart-section > div:not(:last-child) {
+        margin-bottom: 16px;
+    }
+    #chartArea  {
+        overflow-x: auto;
+    }
+    #chartArea > svg {
+        width: 100%;
+    }
+}

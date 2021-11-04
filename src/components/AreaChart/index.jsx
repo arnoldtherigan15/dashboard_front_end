@@ -2,52 +2,16 @@ import { useEffect, useRef } from "react"
 import * as d3 from "d3"
 import './index.css'
 
-// const data  = [
-//     {
-//         day: "Mon",
-//         total: 200
-//     },
-//     {
-//         day: "Mon",
-//         total: 500
-//     },
-//     {
-//         day: "Mon",
-//         total: 600
-//     },
-//     {
-//         day: "Mon",
-//         total: 40
-//     },
-//     {
-//         day: "Tue",
-//         total: 100
-//     },
-//     {
-//         day: "Wed",
-//         total: 300
-//     },
-//     {
-//         day: "Thu",
-//         total: 50
-//     },
-//     {
-//         day: "Fri",
-//         total: 200
-//     },
-//     {
-//         day: "Sat",
-//         total: 500
-//     },
-//     {
-//         day: "Sun",
-//         total: 20
-//     }
-// ]
+function getTotal(data) {
+    let total = 0
+    data.forEach(el => {
+        total += Number(el.total)
+    })
+    return total
+}
 
-export default function AreaChart({  data, title }) {
+export default function AreaChart({ data, title }) {
     const areaChart = useRef()
-    // const colorsArr = ['#725E9C','#5C8F94','#EBA45E','#E4EAEB']
     const { width, height } = { width: 648, height: 400 }
     
 
@@ -86,7 +50,6 @@ export default function AreaChart({  data, title }) {
                 {offset: "0%", color: "rgba(120, 151, 100, .0)"},			
                 {offset: "20%", color: "rgba(120, 151, 100, .2)"},	
                 {offset: "40%", color: "rgba(120, 151, 100, .8)"},	
-                // {offset: "80%", color: "rgba(120, 151, 100, .6)"},	
                 {offset: "100%", color: "rgba(120, 151, 100, 1)"}	
             ])						
         .enter().append("stop")			
@@ -121,20 +84,13 @@ export default function AreaChart({  data, title }) {
             <div id="chartArea">
                 <svg ref={areaChart}></svg>
             </div>
-            {/* <div className="chart-desc-box">
-                {
-                    data.map((el,i) => {
-                        return (
-                            <div className="chart-desc-item" key={i}>
-                                <div className="chart-desc-item-color" style={{ "backgroundColor": colorsArr[i] }} role={`chart-item-${i}`}></div>
-                                <div className="chart-desc-item-text">
-                                    <span>{el.label}</span>
-                                </div>
-                            </div>
-                        )
-                    })
-                }
-            </div> */}
+            <div className="chart-desc-box-2">
+                <div>
+                    <p>Total Revenue</p>
+                    <h3>${getTotal(data)}</h3>
+                    <h4>7,00%</h4>
+                </div>
+            </div>
         </div>
     )
 }
