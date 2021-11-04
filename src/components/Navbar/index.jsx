@@ -26,6 +26,8 @@ export default function Navbar({ user, onSubmit, isNotifExists }) {
                     </div>
                 </div>
             </div>
+
+
             <div className="nav-right">
                 <div>
                     <form onSubmit={(e) => {onSubmit(e, searchTxt)}} className="search" role="searchForm">
