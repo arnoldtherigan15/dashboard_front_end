@@ -1,0 +1,15 @@
+.area {							
+    fill: url(#area-gradient);					
+    stroke-width: 0px;			
+}
+
+.chart-container-2 {
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    padding: 32px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
