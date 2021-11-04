@@ -53,14 +53,15 @@ body {
     }
 
     .calendar-container {
-        width: 80%;
+        width: 90%;
     }
     .table-container {
         width: 100%;
     }
+    
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 700px) {
     .chart-container {
         width: 90%;
     }
@@ -75,5 +76,14 @@ body {
     }
     #chartArea > svg {
         width: 100%;
+    }
+    .react-datepicker__day {
+        margin: .2em;
+    }
+    .react-datepicker__day-name {
+        margin: .2em;
+    }
+    .react-datepicker {
+        height: 300px;
     }
 }
