@@ -100,8 +100,6 @@ export default function AreaChart({  data, title }) {
                         .y0(yScale(0))
                         .y1(d => yScale(d.total))
 
-                        				
-        console.log(data,">>>fasdf");    
         svg.append("path")
             .datum(data)
             .attr("class", "area")

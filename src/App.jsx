@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Navbar, DateSubMenu, PieAreaChart, AreaChart, PolarAreaChart } from './components'
+import { Navbar, DateSubMenu, PieAreaChart, AreaChart, PolarAreaChart, Table } from './components'
 import useFetch from './hooks/useFetch'
 import { groupingConversion, groupingUserCat, getRevenue } from './helper'
 import './styles/global.css'
@@ -29,22 +29,33 @@ export default function App() {
                 isLoading ? (
                     <h1>Loading .... </h1>
                 ) : (
-                    <main className="main">
-                        {
-                            orders?.length && (
-                                <PieAreaChart data={groupingConversion(orders)} title="Conversion"/>
-                            )
-                        }
-                        {
-                            Object.keys(userCat).length && (
-                                <PolarAreaChart title="Users" data={groupingUserCat(userCat)}/>
-                            )
-                        }
-                        {
-                            orders?.length && (
-                                <AreaChart data={getRevenue(orders)} title="Revenue"/>
-                            )
-                        }
+                    <main>
+                        <section className="chart-section">
+                            {
+                                orders?.length && (
+                                    <PieAreaChart data={groupingConversion(orders)} title="Conversion"/>
+                                )
+                            }
+                            {
+                                Object.keys(userCat).length && (
+                                    <PolarAreaChart title="Users" data={groupingUserCat(userCat)}/>
+                                )
+                            }
+                            {
+                                orders?.length && (
+                                    <AreaChart data={getRevenue(orders)} title="Revenue"/>
+                                )
+                            }
+                        </section>
+                        <section className="table-section">
+                            <div style={{ 'width': '30%', 'backgroundColor': 'red' }}>
+                            </div>
+                            {
+                                orders?.length && (
+                                    <Table data={orders} title="Orders"/>
+                                )
+                            }
+                        </section>
                     </main>
                 )
             }
